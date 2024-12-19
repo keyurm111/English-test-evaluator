@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Listening Test: Practice Test 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .audio-section, .question {
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h1>IELTS Listening Test: Practice Test 1</h1>
+
+<!-- Section 1 -->
+<div class="audio-section">
+    <h3>Section 1</h3>
+    <p>Listen to the audio and answer Questions 1-10.</p>
+    <audio controls>
+        <source src="/Users/keyurmoradiya/Downloads/listening & reading/source/listening1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<form id="test-form">
+    <div class="questions">
+        <h3>Questions 1-10: Mixed Question Types</h3>
+        <!-- Question 1 -->
+        <div class="question">
+            <label>1. What does her briefcase look like?</label><br>
+            <select id="q1" name="q1">
+                <option value="">Select an answer</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+        </div>
+        <img src="/Users/keyurmoradiya/Downloads/listening & reading/source/1.png" alt="Briefcase Options">
+
+        <!-- Question 2 -->
+        <div class="question">
+            <label>2. Which picture shows the distinguishing features?</label><br>
+            <select id="q2" name="q2">
+                <option value="">Select an answer</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+        </div>
+        <img src="/Users/keyurmoradiya/Downloads/listening & reading/source/2.png" alt="features">
+
+        <!-- Question 3 -->
+        <div class="question">
+            <label>3. What did she have inside her briefcase?</label><br>
+            <select id="q3" name="q3">
+                <option value="">Select an answer</option>
+                <option value="A">A wallet, pens and novel</option>
+                <option value="B">B papers and wallet</option>
+                <option value="C">C pens and novel</option>
+                <option value="D">D papers, pens and novel</option>
+            </select>
+        </div>
+        <!-- Question 4 -->
+        <div class="question">
+            <label>4. Where was she standing when she lost her briefcase?</label><br>
+            <input type="text" id="q4" name="q4">
+        </div>
+        <img src="/Users/keyurmoradiya/Downloads/listening & reading/source/3.png" alt="station">
+
+        <!-- Question 5 -->
+        <div class="question">
+            <label>5. What time was it when she lost her briefcase?</label><br>
+            <input type="text" id="q5" name="q5">
+        </div>
+        <img src="/Users/keyurmoradiya/Downloads/listening & reading/source/4.png" alt="time">
+
+        <!-- Question 6 -->
+        <div class="question">
+            <label>6. Complete the form: Name of the town <input type="text" id="q6" name="q6"></label>
+        </div>
+        <!-- Question 7 -->
+        <div class="question">
+            <label>7. Her first impressions of the town <input type="text" id="q7" name="q7"></label>
+        </div>
+        <!-- Question 8 -->
+        <div class="question">
+            <label>8. Type of accommodation <input type="text" id="q8" name="q8"></label>
+        </div>
+        <!-- Question 9 -->
+        <div class="question">
+            <label>9. Her feelings about the accommodation <input type="text" id="q9" name="q9"></label>
+        </div>
+        <!-- Question 10 -->
+        <div class="question">
+            <label>10. Name of course <input type="text" id="q10" name="q10"></label>
+        </div>
+    </div>
+
+    <!-- Repeat for Sections 2, 3, and 4 -->
+    <!-- Add similar question structures for questions 11-40 -->
+
+    <button type="button" onclick="checkAnswers()">Submit Answers</button>
+</form>
+
+<div id="results" class="result"></div>
+
+<script>
+    const correctAnswers = {
+        q1: "A",
+        q2: "C",
+        q3: "D",
+        q4: "train station",
+        q5: "3:00 PM",
+        q6: "Prescott",
+        q7: "Quiet",
+        q8: "Fountain",
+        q9: "752239",
+        q10: "£65",
+        // Continue adding answers for q11 to q40
+    };
+
+    function checkAnswers() {
+        const form = document.getElementById('test-form');
+        const resultsDiv = document.getElementById('results');
+        resultsDiv.innerHTML = ""; // Clear previous results
+
+        let score = 0;
+        const totalQuestions = Object.keys(correctAnswers).length;
+
+        for (const [key, correctAnswer] of Object.entries(correctAnswers)) {
+            const userAnswer = form[key]?.value.trim();
+            const resultText = document.createElement('p');
+            if (userAnswer?.toUpperCase() === correctAnswer.toUpperCase()) {
+                resultText.textContent = `Question ${key.slice(1)}: Correct!`;
+                resultText.className = "correct";
+                score++;
+            } else {
+                resultText.textContent = `Question ${key.slice(1)}: Incorrect. Correct answer: ${correctAnswer}`;
+                resultText.className = "incorrect";
+            }
+            resultsDiv.appendChild(resultText);
+        }
+
+        const scoreText = document.createElement('p');
+        scoreText.textContent = `You scored ${score} out of ${totalQuestions}.`;
+        resultsDiv.appendChild(scoreText);
+    }
+</script>
+<a href="index.html" style="text-decoration: none; color: #28a745; font-size: 18px; display: inline-block; margin-bottom: 20px;">← Back to Home</a>
+
+</body>
+</html>
