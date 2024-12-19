@@ -1,0 +1,24 @@
+make a first folder with name of "speaking and writing module".in which add below files.
+main_app.py
+energy_source_pie_chart.jpg
+rainfall_graph.jpg
+recycling_process.jpg
+speaking_module.py
+writing_module.py
+
+For listening and reading module:
+make folder with name of "listening and reading module". in which add below files.
+index.html
+reading.html
+listening.html
+make a subfolder in this this folder with name of source in which add below files.
+1.png
+2.png
+3.png
+4.png
+listening1.mp3
+
+After this open your terminal and write "streamlit run main_app.py" for speaking and writing module.
+so you can see the http link. copy this link and paste the link in your browser so you can see both modules.
+
+for reading and listening module, just run index.html. 
